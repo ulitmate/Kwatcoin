@@ -70,7 +70,17 @@ matrix:
     compiler: clang
     env:
     - MATRIX_EVAL="CC=/usr/local/opt/llvm@8/bin/clang && CXX=/usr/local/opt/llvm@8/bin/clang++"
-    - LABEL="osx"
+    - LABEL="osx-10.13"
+    - _DEPLOYABLE="true"
+    - STRIP="strip"
+
+  # OSX, clang
+  - os: osx
+    osx_image: xcode11
+    compiler: clang
+    env:
+    - MATRIX_EVAL="CC=/usr/local/opt/llvm@8/bin/clang && CXX=/usr/local/opt/llvm@8/bin/clang++"
+    - LABEL="osx-10.14+"
     - _DEPLOYABLE="true"
     - STRIP="strip"
 
